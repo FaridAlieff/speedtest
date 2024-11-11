@@ -9,10 +9,19 @@
 <body>
     <div class="container">
         <h1>İnternet Hızı Ölçer</h1>
-        <div class="speed-info">
-            <p>Ping: <span id="ping">-</span> ms</p>
-            <p>Download: <span id="download">-</span> Mbps</p>
-            <p>Upload: <span id="upload">-</span> Mbps</p>
+        <div class="speed-metrics">
+            <div class="metric">
+                <h2>Ping</h2>
+                <p><span id="ping">-</span> ms</p>
+            </div>
+            <div class="metric">
+                <h2>Download</h2>
+                <p><span id="download">-</span> Mbps</p>
+            </div>
+            <div class="metric">
+                <h2>Upload</h2>
+                <p><span id="upload">-</span> Mbps</p>
+            </div>
         </div>
         <button onclick="startSpeedTest()">Hızı Öl</button>
     </div>
