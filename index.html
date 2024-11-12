@@ -3,14 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currency Exchange</title>
+    <title>Currency Converter</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Currency Exchange Rates</h1>
-        <div id="currency-list">
-            <!-- Döviz oranları burada gösterilecek -->
+        <h1>Currency Converter</h1>
+        <div class="currency-cards">
+            <!-- Üç para birimi kartı -->
+            <div class="currency-card">
+                <img src="flags/usd.png" alt="USD" class="flag">
+                <select class="currency-selector" id="currency1">
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="TRY">TRY - Turkish Lira</option>
+                    <!-- Daha fazla seçenek eklenebilir -->
+                </select>
+                <input type="number" id="amount1" placeholder="0">
+            </div>
+
+            <div class="currency-card">
+                <img src="flags/eur.png" alt="EUR" class="flag">
+                <select class="currency-selector" id="currency2">
+                    <option value="EUR">EUR - Euro</option>
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="TRY">TRY - Turkish Lira</option>
+                    <!-- Daha fazla seçenek eklenebilir -->
+                </select>
+                <input type="number" id="amount2" placeholder="0" readonly>
+            </div>
+
+            <div class="currency-card">
+                <img src="flags/try.png" alt="TRY" class="flag">
+                <select class="currency-selector" id="currency3">
+                    <option value="TRY">TRY - Turkish Lira</option>
+                    <option value="USD">USD - US Dollar</option>
+                    <option value="EUR">EUR - Euro</option>
+                    <!-- Daha fazla seçenek eklenebilir -->
+                </select>
+                <input type="number" id="amount3" placeholder="0" readonly>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
