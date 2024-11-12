@@ -24,3 +24,30 @@ document.getElementById('amount1').addEventListener('input', updateExchangeRates
 document.getElementById('currency1').addEventListener('change', updateExchangeRates);
 document.getElementById('currency2').addEventListener('change', updateExchangeRates);
 document.getElementById('currency3').addEventListener('change', updateExchangeRates);
+
+
+//bayrak
+function updateFlag(currencyCode, flagElementId) {
+    const flagElement = document.getElementById(flagElementId);
+    const countryCode = currencyCode.slice(0, 2).toLowerCase(); // Para biriminin ilk 2 harfini alıp küçük yapıyoruz
+    flagElement.src = `https://flagcdn.com/w40/${countryCode}.png`; // Flagcdn.com üzerinden bayrağı alıyoruz
+    flagElement.alt = `${currencyCode} Flag`;
+}
+
+document.getElementById('currency1').addEventListener('change', () => {
+    const currency1 = document.getElementById('currency1').value;
+    updateFlag(currency1, 'flag1');
+    updateExchangeRates();
+});
+
+document.getElementById('currency2').addEventListener('change', () => {
+    const currency2 = document.getElementById('currency2').value;
+    updateFlag(currency2, 'flag2');
+    updateExchangeRates();
+});
+
+document.getElementById('currency3').addEventListener('change', () => {
+    const currency3 = document.getElementById('currency3').value;
+    updateFlag(currency3, 'flag3');
+    updateExchangeRates();
+});
