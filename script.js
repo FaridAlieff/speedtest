@@ -1,18 +1,24 @@
-function startSpeedTest() {
-    const speedDisplay = document.getElementById("speed-value");
-    const startButton = document.getElementById("start-button");
-    startButton.disabled = true; // Düğmeyi devre dışı bırak
-    speedDisplay.textContent = "0"; // Değerleri sıfırla
+// script.js
 
-    let speed = 0;
-    const maxSpeed = Math.floor(Math.random() * 100) + 50; // 50-150 arası rastgele hız
-    const speedInterval = setInterval(() => {
-        if (speed < maxSpeed) {
-            speed += Math.floor(Math.random() * 5) + 1; // Rastgele artış
-            speedDisplay.textContent = speed;
-        } else {
-            clearInterval(speedInterval); // Hız değerine ulaşıldığında durdur
-            startButton.disabled = false; // Düğmeyi tekrar etkinleştir
-        }
-    }, 100);
+async function fetchExchangeRates() {
+    const response = await fetch('https://api.exchangerate-api.com/v4/latest/USD'); // Örnek bir API
+    const data = await response.json();
+
+    // Gelen veriyi işleyelim
+    displayExchangeRates(data.rates);
 }
+
+function displayExchangeRates(rates) {
+    const currencyList = document.getElementById('currency-list');
+    currencyList.innerHTML = ''; // Eski içerikleri temizle
+
+    for (const [currency, rate] of Object.entries(rates)) {
+        const currencyItem = document.createElement('div');
+        currencyItem.className = 'currency-item';
+        currencyItem.textContent = `${currency}: ${rate.toFixed(2)}`;
+        currencyList.appendChild(currencyItem);
+    }
+}
+
+// Sayfa yüklendiğinde API'yi çalıştır
+window.addEventListener('load', fetchExchangeRates);
