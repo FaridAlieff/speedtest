@@ -29,12 +29,13 @@ h1 {
 
 .currency-cards {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
     gap: 15px;
+    justify-content: center;
 }
 
 .currency-card {
-    width: 30%;
+    width: 220px;
     background-color: #f1f1f1;
     padding: 15px;
     border-radius: 8px;
@@ -53,4 +54,19 @@ h1 {
     padding: 8px;
     margin-top: 10px;
     font-size: 1em;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }

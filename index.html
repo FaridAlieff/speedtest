@@ -3,49 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Currency Converter</title>
+    <title>Currency & Crypto Converter</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Currency Converter</h1>
-
     <div class="container">
-        <div class="currency-cards">
-            <!-- Üç para birimi kartı -->
-            <div class="currency-card">
-                <img id="flag1" alt="USD Flag" class="flag">
-                <select class="currency-selector" id="currency1">
-                    <option value="USD">USD - US Dollar</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="TRY">TRY - Turkish Lira</option>
-                    <!-- Daha fazla seçenek eklenebilir -->
-                </select>
-                <input type="number" id="amount1" placeholder="0">
-            </div>
-            
-
-            <div class="currency-card">
-                <img src="flags/eur.png" alt="EUR" class="flag">
-                <select class="currency-selector" id="currency2">
-                    <option value="EUR">EUR - Euro</option>
-                    <option value="USD">USD - US Dollar</option>
-                    <option value="AZN">AZN - Turkish Lira</option>
-                    <!-- Daha fazla seçenek eklenebilir -->
-                </select>
-                <input type="number" id="amount2" placeholder="0" readonly>
-            </div>
-
-            <div class="currency-card">
-                <img src="flags/try.png" alt="TRY" class="flag">
-                <select class="currency-selector" id="currency3">
-                    <option value="AZN">AZN - Turkish Lira</option>
-                    <option value="USD">USD - US Dollar</option>
-                    <option value="EUR">EUR - Euro</option>
-                    <!-- Daha fazla seçenek eklenebilir -->
-                </select>
-                <input type="number" id="amount3" placeholder="0" readonly>
-            </div>
+        <h1>Currency & Crypto Converter</h1>
+        <div class="currency-cards" id="currency-cards">
+            <!-- Kartlar dinamik olarak JavaScript ile eklenecek -->
         </div>
+        <button onclick="addCurrencyCard()">+ Add New Currency</button>
     </div>
     <script src="script.js"></script>
 </body>
